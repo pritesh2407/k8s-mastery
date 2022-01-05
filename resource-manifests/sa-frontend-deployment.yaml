@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: sa-frontend
-  replicas: 2                                             # 2
+  replicas: 1                                             # 1
   minReadySeconds: 15
   strategy:
     type: RollingUpdate                                   # 3
@@ -21,7 +21,7 @@ spec:
         app: sa-frontend                                  # 6
     spec:
       containers:
-        - image: rinormaloku/sentiment-analysis-frontend
+        - image: priteshtupe/sa-frontend:latest
           imagePullPolicy: Always                         # 7
           name: sa-frontend
           ports:

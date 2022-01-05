@@ -8,7 +8,7 @@ spec:
   selector:
      matchLabels:
        app: sa-logic
-  replicas: 2
+  replicas: 1
   minReadySeconds: 15
   strategy:
     type: RollingUpdate
@@ -21,7 +21,7 @@ spec:
         app: sa-logic
     spec:
       containers:
-        - image: rinormaloku/sentiment-analysis-logic
+        - image: priteshtupe/sa-logic:latest
           imagePullPolicy: Always
           name: sa-logic
           ports:

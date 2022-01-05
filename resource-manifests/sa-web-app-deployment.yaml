@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: sa-web-app
-  replicas: 2
+  replicas: 1
   minReadySeconds: 15
   strategy:
     type: RollingUpdate
@@ -21,7 +21,7 @@ spec:
         app: sa-web-app
     spec:
       containers:
-      - image: rinormaloku/sentiment-analysis-web-app
+      - image: priteshtupe/sa-webapp:latest
         imagePullPolicy: Always
         name: sa-web-app
         env:
